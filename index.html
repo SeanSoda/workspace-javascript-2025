@@ -42,14 +42,36 @@
             <h1> Variable and Arithemetic Operation</h1>
             <p> Practice on variables </p>
 
+            <script>
+                var a =3;
+                var b =7;
+                var c = a * b;
+                var d =5;
+                var e = c/d;
+                var f = e % a;
+
+                console.log(c);
+                console.log(e);
+                console.log(f);
+
+            </script>
+
 
         </div>
 
         <div class="practice">
             <h1> JavaScript Escape Sequence</h1>
+            <img src="img/die1.png" alt="die">
             <p> Write an image to the page </p>
+            <script>
+                document.write("<img src=\"img/die1.png\" alt=\"die\"> ");
+            </script>
 
             <p> Write a table to the page </p>
+
+            <script>
+                document.write("<table> <th>thing a thing <\/th> <tr> another row <\/tr> <\/table\>")
+            </script>
 
         </div>
 
@@ -57,6 +79,10 @@
             <h1>Window and Document Object </h1>
             <p> Try alert, open, location, url </p>
             <script>
+                document.write("The document is modified " + document.lastModified);
+                //window.open("https://www.google.com");
+                //window.location.assign("https://www.usca.edu");
+               //window.alert("this is an alert");
 
             </script>
 
@@ -78,6 +104,15 @@
             <p id="p3"> Paragraph Number three </p>
             <p>Please write JavaScript code to change the content of each paragraph.​
             <p>
+            <script>
+                const pE = document.querySelector('#p1');
+                const pE3 = document.querySelector('#p3'); //this is to change p3
+                pE.innerHTML = "<b> Just gonna make it BOLD </b>";
+                console.log(pE);
+                document.getElementById("p2").textContent="<i> making it itallics</i>";
+                pE3.innerHTML = "<b> gonna make this bold too </b>";
+
+            </script>
 
 
         </div>
@@ -87,7 +122,8 @@
             <p> Please enter your numbers </p>
             <script>
                 function calculate() {
-
+                    const fE = document.getElementsByName("addnum1")[0];
+                    console.log(fE);
 
                 }
             </script>

@@ -124,6 +124,13 @@
                 function calculate() {
                     const fE = document.getElementsByName("addnum1")[0];
                     console.log(fE);
+                    var a = parseInt(fE.value);
+                    const sE = document.getElementsByName("addnum2")[0];
+
+                    var b = parseInt(sE.value);
+                    var c = a + b;
+                    document.getElementById('result').innerHTML='<i>' + c +'</i>';
+
 
                 }
             </script>
@@ -142,8 +149,19 @@
                         <input type="text" id="cName">
                     </label>
                 </p>
+                <script>
+                    /* Event Handler */
+                    function welcome(){
+                        var name = document.getElementById('cName').value;
+                        document.getElementById('welcome').textContent ="Welcome";
+                    }
+                    /* Register the event */
+                    const nameE = document.querySelector("#cName");
+                    nameE.addEventListener('blur', welcome,false);
 
-                <p id="message">
+                </script>
+
+                <p id="Random Message">
 
                 </p>
 
@@ -161,6 +179,14 @@
             Calculating Square:
             <input type="text" id="squarenum" placeholder="Type in a number"> <sup> 2 </sup> =
             <label id="squareresult"> ? </label>
+            <script>
+                function Square (){
+                    var square = document.getElementById("squarenum").value;
+                    var answer = parseInt(square * square);
+                    document.getElementById("squareresult").textContent = answer;
+                }
+                document.getElementById("squarenum").addEventListener('blur',Square,false);
+            </script>
 
         </div>
 

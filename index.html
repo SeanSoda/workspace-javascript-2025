@@ -14,27 +14,27 @@
 <body>
     <div class="wrapper">
         <div class="panelLeft">
-            
+
         </div>
 
         <div class="practice">
             <h1>Hello world in JavaScript
             </h1>
             <p>
-                Please display a hello world message in JavaScript. 
+                Please display a hello world message in JavaScript.
                 <script>
                     document.title = "JavaScript Basic -- In class practice -- Sean Soda";
                     // use document.write to display a message
                     document.write("Hello World!");
                     // use console.log to display a message
-                    console.log("Print for debugging");   
-                  
-                    
+                    console.log("Print for debugging");
+
+
                 </script>
             </p>
-            <p> Please import external file hello.js here. 
+            <p> Please import external file hello.js here.
                 <script src="js/hello.js"> </script>
-                
+
             </p>
         </div>
 
@@ -43,11 +43,11 @@
             <p> Practice on variables </p>
 
             <script>
-                var a =3;
-                var b =7;
+                var a = 3;
+                var b = 7;
                 var c = a * b;
-                var d =5;
-                var e = c/d;
+                var d = 5;
+                var e = c / d;
                 var f = e % a;
 
                 console.log(c);
@@ -82,7 +82,7 @@
                 document.write("The document is modified " + document.lastModified);
                 //window.open("https://www.google.com");
                 //window.location.assign("https://www.usca.edu");
-               //window.alert("this is an alert");
+                //window.alert("this is an alert");
 
             </script>
 
@@ -104,15 +104,15 @@
             <p id="p3"> Paragraph Number three </p>
             <p>Please write JavaScript code to change the content of each paragraph.​
             <p>
-            <script>
-                const pE = document.querySelector('#p1');
-                const pE3 = document.querySelector('#p3'); //this is to change p3
-                pE.innerHTML = "<b> Just gonna make it BOLD </b>";
-                console.log(pE);
-                document.getElementById("p2").textContent="<i> making it itallics</i>";
-                pE3.innerHTML = "<b> gonna make this bold too </b>";
+                <script>
+                    const pE = document.querySelector('#p1');
+                    const pE3 = document.querySelector('#p3'); //this is to change p3
+                    pE.innerHTML = "<b> Just gonna make it BOLD </b>";
+                    console.log(pE);
+                    document.getElementById("p2").textContent = "<i> making it itallics</i>";
+                    pE3.innerHTML = "<b> gonna make this bold too </b>";
 
-            </script>
+                </script>
 
 
         </div>
@@ -129,7 +129,7 @@
 
                     var b = parseInt(sE.value);
                     var c = a + b;
-                    document.getElementById('result').innerHTML='<i>' + c +'</i>';
+                    document.getElementById('result').innerHTML = '<i>' + c + '</i>';
 
 
                 }
@@ -151,13 +151,13 @@
                 </p>
                 <script>
                     /* Event Handler */
-                    function welcome(){
+                    function welcome() {
                         var name = document.getElementById('cName').value;
-                        document.getElementById('welcome').textContent ="Welcome";
+                        document.getElementById('welcome').textContent = "Welcome";
                     }
                     /* Register the event */
                     const nameE = document.querySelector("#cName");
-                    nameE.addEventListener('blur', welcome,false);
+                    nameE.addEventListener('blur', welcome, false);
 
                 </script>
 
@@ -180,12 +180,12 @@
             <input type="text" id="squarenum" placeholder="Type in a number"> <sup> 2 </sup> =
             <label id="squareresult"> ? </label>
             <script>
-                function Square (){
+                function Square() {
                     var square = document.getElementById("squarenum").value;
                     var answer = parseInt(square * square);
                     document.getElementById("squareresult").textContent = answer;
                 }
-                document.getElementById("squarenum").addEventListener('blur',Square,false);
+                document.getElementById("squarenum").addEventListener('blur', Square, false);
             </script>
 
         </div>
@@ -194,14 +194,21 @@
             <h1> Difference between textcontent and innerHTML</h1>
             <p> HTML Try it Editor </p>
             <p>ENTER your code </p>
-            <textarea cols="40" rows="20" id="code">  
+            <textarea cols="40" rows="20" id="code">
 
             </textarea>
 
-            <input type="button" id="tryit" value="Click and Display"> 
+            <input type="button" id="tryit" value="Click and Display">
 
-            <div id="innerHTMLmessage"> 
+            <div id="innerHTMLmessage">
             </div>
+            <script>
+                function htmltryit() {
+                    document.getElementById("innerHTMLmessage").innerHTML = document.getElementById("code").value;
+                }
+                //register event
+                document.getElementById("tryit").addEventListener("click", htmltryit, false);
+            </script>
 
 
         </div>
@@ -213,20 +220,47 @@
                 <select id="year">
                     <option> 2003</option>
                     <option> 2004</option>
-                </select>.</p>
+                </select>.
+            </p>
             <p>Please enter the condition of the car
                 <select id="condition">
                     <option> Fair</option>
                     <option> Good</option>
-                </select>.</p>
+                </select>.
+            </p>
 
             <p id="price">
+
+
 
             </p>
 
             <script type="text/javascript">
+                //event handler
+                function year_change() {
+                    console.log("this is working");
+                    var year = document.getElementById('year').value;
+                    var condition = document.getElementById('condition').value;
+                    console.log("year" + year + "condition" + condition)
+                    if (year === "2004" && condition === "Fair") {
+                        document.getElementById('price').textContent = "The price is $1500";
+                    }
+                    else if (year === "2004" && condition === "Good") {
+                        document.getElementById('price').textContent = "The price is $2000";
+                    }
+                    else if (year === "2003" && condition === "Good") {
+                        document.getElementById('price').textContent = "The price is $1500";
+                    }
+                    else {
+                        document.getElementById('price').textContent = "The price is $1000";
 
-
+                    }
+                }
+                //register event
+                const yearE = document.getElementById('year');
+                yearE.addEventListener('change', year_change, false);
+                const conditionE = document.getElementById('condition');
+                conditionE.addEventListener('change', year_change, false);
 
             </script>
 
@@ -234,9 +268,37 @@
 
         <div class="practice">
             <h1> Decision Statement - Switch</h1>
-            <p> Choose your favorite theme(warm, cool, hot)
+            <p> Choose your favorite theme(warm, cool, hot, cold)
                 <input type="text" id="theme">
             </p>
+            <script>
+                //event
+                function themechange() {
+                    var theme = document.getElementById('theme').value;
+                    var bcolor = "white";
+                    switch (theme) {
+                        case "warm":
+                            bcolor = "yellow";
+                            break;
+                        case "cool":
+                            bcolor = "blue";
+                            break;
+                        case "hot":
+                            bcolor = "red";
+                            break;
+                        case "cold":
+                            bcolor ="purple";
+                            break;
+                        default:
+                            bcolor = "white"
+                            break;
+                    }
+                    console.log("color is " +bcolor);
+                    document.body.style.backgroundColor=bcolor;
+                }
+                //register
+                document.getElementById('theme').addEventListener("blur", themechange,false);
+            </script>
 
         </div>
 
@@ -261,11 +323,23 @@
 
             </p>
             <p>
-                <input type="button" value="Check Premium">
+                <input type="button" id ="checkpremium" value="Check Premium">
             </p>
             <p id="premiumresult">
 
             </p>
+            <script>
+                //event handler
+                function calcP() {
+                    var coverage = document.querySelector('input[name="coverage"]:checked').value;
+                    var index = document.getElementById('agegroup').selectedIndex;
+
+
+                }
+
+                //register event
+                document.getElementById("checkpremium").addEventListener('click',calcP,false);
+            </script>
 
         </div>
 
@@ -363,9 +437,9 @@
             <div class="img-container-hide">
                 <img src="img/usca5.jpg" alt="usca">
             </div>
-			<script>
-				
-			</script>
+            <script>
+
+            </script>
 
 
         </div>
@@ -407,10 +481,10 @@
 
 
         <div class="practice">
-            <h1>  HTML Canvas </h1>
+            <h1> HTML Canvas </h1>
             <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
-                    Your browser does not support the HTML5 canvas tag.</canvas>
-            <div id="drawing">  </div>
+                Your browser does not support the HTML5 canvas tag.</canvas>
+            <div id="drawing"> </div>
             <p> Some P5.js examples </p>
             <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
             <script src="js/draw.js"></script>

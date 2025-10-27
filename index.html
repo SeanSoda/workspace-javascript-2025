@@ -333,14 +333,33 @@
                 function calcP() {
                     var coverage = document.querySelector('input[name="coverage"]:checked').value;
                     var index = document.getElementById('agegroup').selectedIndex;
-
-
+                    console.log("index " + typeof index + " coverage " +coverage);
+                    var base =10;
+                    var agefactor =0;
+                    /** the practice --- use switch **/
+                    switch(index){
+                        case 0:
+                            agefactor = 0.08;
+                            break;
+                        case 1:
+                            agefactor = 0.09;
+                            break;
+                        case 2:
+                            agefactor = 0.11;
+                            break;
+                        case 3:
+                            agefactor = 0.17;
+                            break;
+                        default:
+                            break;
+                    }
+                    //this is for the math
+                    var premum = base +agefactor *(parseInt(coverage)/1000);
+                    document.getElementById("premiumresult").textContent = premum;
                 }
-
                 //register event
                 document.getElementById("checkpremium").addEventListener('click',calcP,false);
             </script>
-
         </div>
 
 
@@ -353,6 +372,17 @@
             <p>
                 <input type="button" value="Click for Square">
             </p>
+            <script>
+                function loopin(){
+                    var N = parseInt(document.getElementById("inputnumber1").value);
+                    console.log("N = " +N+ " type " +typeof N);
+                    for ( let i = 0 ; i < N+1; i++){
+                        squares = i*i;
+                        document.write("<p>"+i+ "^2" + "=" +squares +"</p>");
+                    }
+                }
+                document.querySelector('input[value="Click for Square"]').addEventListener('click',loopin,false);
+            </script>
 
         </div>
 
@@ -364,6 +394,14 @@
             <p>
                 <input type="button" value="Click for multiplication table">
             </p>
+            <script>
+                function multiplication(){
+                    var M = parseInt(document.getElementById("inputnumber2").value);
+                    console.log("M = "+M+ " type " +typeof M);
+
+                }
+                document.querySelector('input[value="Click for multiplication table"]').addEventListener('click',multiplication,false)
+            </script>
 
             <!-- output section -->
             <div id="loopoutput">
@@ -383,6 +421,7 @@
             </p>
             <script src="js\mathdrill.js">
             </script>
+            
         </div>
 
         <div class="practice">

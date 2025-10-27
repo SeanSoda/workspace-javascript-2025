@@ -16,3 +16,20 @@ document.querySelector('input[value="1"]').nextSibling.nodeValue=num1.toString()
 document.querySelector('input[value="2"]').nextSibling.nodeValue=num1.toString()+ "-"+num2.toString();
 document.querySelector('input[value="3"]').nextSibling.nodeValue=num1.toString()+ "-"+num2.toString()+  "-"+num3.toString();
 document.querySelector('input[value="4"]').nextSibling.nodeValue=num1.toString()+ "-"+num2.toString()+  "+"+num3.toString();
+
+// Element -- div answer box -- click
+function changeStyle(event){
+    event.preventDefault();
+    var classname = this.getAttribute('class');
+    if (classname == "answer selected"){
+        this.setAttribute('class',"answer");
+    }
+    else {
+        this.setAttribute('class',"answer selected");
+
+    }
+}
+for (var i =0; i<4; i++){
+    document.getElementsByClassName('answer')[i].addEventListener('click',changeStyle,false);
+
+}

@@ -287,17 +287,17 @@
                             bcolor = "red";
                             break;
                         case "cold":
-                            bcolor ="purple";
+                            bcolor = "purple";
                             break;
                         default:
                             bcolor = "white"
                             break;
                     }
-                    console.log("color is " +bcolor);
-                    document.body.style.backgroundColor=bcolor;
+                    console.log("color is " + bcolor);
+                    document.body.style.backgroundColor = bcolor;
                 }
                 //register
-                document.getElementById('theme').addEventListener("blur", themechange,false);
+                document.getElementById('theme').addEventListener("blur", themechange, false);
             </script>
 
         </div>
@@ -323,7 +323,7 @@
 
             </p>
             <p>
-                <input type="button" id ="checkpremium" value="Check Premium">
+                <input type="button" id="checkpremium" value="Check Premium">
             </p>
             <p id="premiumresult">
 
@@ -333,11 +333,11 @@
                 function calcP() {
                     var coverage = document.querySelector('input[name="coverage"]:checked').value;
                     var index = document.getElementById('agegroup').selectedIndex;
-                    console.log("index " + typeof index + " coverage " +coverage);
-                    var base =10;
-                    var agefactor =0;
+                    console.log("index " + typeof index + " coverage " + coverage);
+                    var base = 10;
+                    var agefactor = 0;
                     /** the practice --- use switch **/
-                    switch(index){
+                    switch (index) {
                         case 0:
                             agefactor = 0.08;
                             break;
@@ -354,11 +354,11 @@
                             break;
                     }
                     //this is for the math
-                    var premum = base +agefactor *(parseInt(coverage)/1000);
+                    var premum = base + agefactor * (parseInt(coverage) / 1000);
                     document.getElementById("premiumresult").textContent = premum;
                 }
                 //register event
-                document.getElementById("checkpremium").addEventListener('click',calcP,false);
+                document.getElementById("checkpremium").addEventListener('click', calcP, false);
             </script>
         </div>
 
@@ -373,15 +373,15 @@
                 <input type="button" value="Click for Square">
             </p>
             <script>
-                function loopin(){
+                function loopin() {
                     var N = parseInt(document.getElementById("inputnumber1").value);
-                    console.log("N = " +N+ " type " +typeof N);
-                    for ( let i = 0 ; i < N+1; i++){
-                        squares = i*i;
-                        document.write("<p>"+i+ "^2" + "=" +squares +"</p>");
+                    console.log("N = " + N + " type " + typeof N);
+                    for (let i = 0; i < N + 1; i++) {
+                        squares = i * i;
+                        document.write("<p>" + i + "^2" + "=" + squares + "</p>");
                     }
                 }
-                document.querySelector('input[value="Click for Square"]').addEventListener('click',loopin,false);
+                document.querySelector('input[value="Click for Square"]').addEventListener('click', loopin, false);
             </script>
 
         </div>
@@ -395,12 +395,12 @@
                 <input type="button" value="Click for multiplication table">
             </p>
             <script>
-                function multiplication(){
+                function multiplication() {
                     var M = parseInt(document.getElementById("inputnumber2").value);
-                    console.log("M = "+M+ " type " +typeof M);
+                    console.log("M = " + M + " type " + typeof M);
 
                 }
-                document.querySelector('input[value="Click for multiplication table"]').addEventListener('click',multiplication,false)
+                document.querySelector('input[value="Click for multiplication table"]').addEventListener('click', multiplication, false)
             </script>
 
             <!-- output section -->
@@ -421,7 +421,7 @@
             </p>
             <script src="js\mathdrill.js">
             </script>
-            
+
         </div>
 
         <div class="practice">
@@ -434,7 +434,7 @@
         <div class="practice">
             <h1>Change Attribute -- Rolling a dice </h1>
             <p> <input type="button" id="roll" value="roll" /> </p>
-            <p> <img src="img/die1.png"> </p>
+            <p> <img id="rolldice" src="img/die1.png"> </p>
             <table>
                 <tr>
                     <th>Result</th>
@@ -455,6 +455,34 @@
                     <td id="r6"></td>
                 </tr>
             </table>
+            <script>
+                // Array Practice
+                const myarray = [1, 2, 3, 4, 5, 6, 7];
+                myarray.forEach(element => console.log(element));
+                for (var i in myarray) {
+                    console.log(myarray[i])
+                }
+                myarray.push(10);
+                myarray[100] = 10;
+                console.log(myarray);
+
+                // The dice game
+                var stats = [0, 0, 0, 0, 0, 0];
+                const rolldie = () => {
+                    var num = Math.floor(Math.random() * 6 + 1);
+                    console.log(num);
+                    const imgE = document.getElementById('rolldice');
+                    imgE.setAttribute('src',"img/die"+num+".png");
+                        stats[0]++;
+                        var newid ="r"+num;
+                  
+
+
+                };
+                document.getElementById('roll').addEventListener('click', rolldie, false);
+
+
+            </script>
 
         </div>
 
@@ -477,6 +505,9 @@
                 <img src="img/usca5.jpg" alt="usca">
             </div>
             <script>
+                var index = 3;
+                var imagelist = document.querySelectorAll('.img-container-hide');
+                imagelist[3].setAttribute('class',"img-container");
 
             </script>
 
